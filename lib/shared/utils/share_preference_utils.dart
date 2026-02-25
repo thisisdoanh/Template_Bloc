@@ -4,14 +4,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 @singleton
 class PreferenceUtils {
-  late final SharedPreferences _sharedPreferences;
+  PreferenceUtils(this._sharedPreferences);
 
-  // call this method from iniState() function of mainApp().
-  Future<void> init() async {
-    AppLog.info('Share preference init');
-
-    _sharedPreferences = await SharedPreferences.getInstance();
-  }
+  final SharedPreferences _sharedPreferences;
 
   /// sets
   Future<bool> setBool(String key, bool value) async {

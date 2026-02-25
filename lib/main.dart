@@ -4,16 +4,12 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hive_ce/hive.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:template_bloc/app.dart';
 import 'package:template_bloc/app_bloc.dart';
 import 'package:template_bloc/di/di.dart';
 import 'package:template_bloc/flavors.dart';
-import 'package:template_bloc/hive_registrar.g.dart';
 import 'package:template_bloc/shared/utils/app_log.dart';
 import 'package:template_bloc/shared/utils/bloc_observer.dart';
-import 'package:template_bloc/shared/utils/share_preference_utils.dart';
 
 void main() {
   F.appFlavor = Flavor.values.firstWhere(
@@ -26,11 +22,7 @@ void main() {
       WidgetsFlutterBinding.ensureInitialized();
       configureDeviceUI();
       Bloc.observer = AppBlocObserver();
-      final appDocDir = await getApplicationDocumentsDirectory();
-      Hive.init(appDocDir.path);
-      Hive.registerAdapters();
       await configureDependencies();
-      await Future.wait([getIt<PreferenceUtils>().init()]);
 
       await _startApp();
     },

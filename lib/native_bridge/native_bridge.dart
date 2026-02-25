@@ -1,15 +1,13 @@
 import 'dart:io';
 
 import 'package:flutter/services.dart';
+import 'package:injectable/injectable.dart';
 import 'package:template_bloc/native_bridge/native_response_model.dart';
 import 'package:template_bloc/shared/utils/app_log.dart';
 
+@singleton
 class NativeBridge {
-  factory NativeBridge() => instance;
-
-  NativeBridge._internal();
-
-  static NativeBridge instance = NativeBridge._internal();
+  NativeBridge();
 
   static const _platformFramework = MethodChannel('method_channel');
 
@@ -38,19 +36,12 @@ class NativeBridge {
     Map<String, dynamic>? data,
   }) async {
     try {
-      final dynamic result = await _platformFramework.invokeMethod(
-        methodName,
-        data,
-      );
+      final dynamic result = await _platformFramework.invokeMethod(methodName, data);
 
       _printMessage(result, methodName);
       return NativeResponseModel(isSuccess: true, data: result);
     } on PlatformException catch (platformException) {
-      _printMessage(
-        platformException.message ?? '',
-        methodName,
-        hasError: true,
-      );
+      _printMessage(platformException.message ?? '', methodName, hasError: true);
       throw PlatformException(
         code: platformException.code,
         message: 'Error native method: ${platformException.message}',
@@ -63,11 +54,7 @@ class NativeBridge {
     }
   }
 
-  void _printMessage(
-    Object message,
-    String methodName, {
-    bool hasError = false,
-  }) {
+  void _printMessage(Object message, String methodName, {bool hasError = false}) {
     if (!hasError) {
       AppLog.info('$methodName\n$message', tag: 'Native Bridge');
     } else {
