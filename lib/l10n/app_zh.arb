@@ -1,0 +1,6 @@
+{
+  "@@locale": "zh",
+  "error": "错误",
+  "timeoutErrorOccurred": "发生超时错误",
+  "errorSomething": "发生错误..."
+}

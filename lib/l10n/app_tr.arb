@@ -1,0 +1,6 @@
+{
+  "@@locale": "tr",
+  "error": "Hata",
+  "timeoutErrorOccurred": "Zaman aşımı hatası oluştu",
+  "errorSomething": "Bir hata oluştu..."
+}

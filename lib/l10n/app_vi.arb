@@ -1,0 +1,6 @@
+{
+  "@@locale": "vi",
+  "error": "Lỗi",
+  "timeoutErrorOccurred": "Đã xảy ra lỗi thời gian chờ",
+  "errorSomething": "Đã xảy ra lỗi..."
+}

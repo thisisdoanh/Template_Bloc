@@ -1,0 +1,6 @@
+{
+  "@@locale": "ko",
+  "error": "오류",
+  "timeoutErrorOccurred": "시간 초과 오류가 발생했습니다",
+  "errorSomething": "문제가 발생했습니다..."
+}

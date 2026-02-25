@@ -1,0 +1,6 @@
+{
+  "@@locale": "ru",
+  "error": "Ошибка",
+  "timeoutErrorOccurred": "Произошла ошибка тайм-аута",
+  "errorSomething": "Произошла ошибка..."
+}

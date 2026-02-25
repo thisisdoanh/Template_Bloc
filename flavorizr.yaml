@@ -1,0 +1,21 @@
+flavors:
+  dev:
+    app:
+      name: "Dev: Template Bloc"
+
+    android:
+      applicationId: "com.thisisdoanh.template.bloc.dev"
+    ios:
+      bundleId: "com.thisisdoanh.template.bloc.dev"
+  #      firebase:
+  #        config: "android/app/src/dev/google-services.json"
+
+  prod:
+    app:
+      name: "Template Bloc"
+    android:
+      applicationId: "com.thisisdoanh.template.bloc"
+    ios:
+      bundleId: "com.thisisdoanh.template.bloc"
+#      firebase:
+#        config: "android/app/src/prod/google-services.json"

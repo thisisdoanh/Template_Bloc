@@ -1,0 +1,6 @@
+{
+  "@@locale": "de",
+  "error": "Fehler",
+  "timeoutErrorOccurred": "Zeitüberschreitungsfehler aufgetreten",
+  "errorSomething": "Etwas ist schief gelaufen..."
+}

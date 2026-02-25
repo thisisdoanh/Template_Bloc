@@ -1,0 +1,4 @@
+analyzer:
+  exclude:
+    # Exclude folder chứa template files
+    - "lib/templates/**"

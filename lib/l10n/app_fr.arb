@@ -1,0 +1,6 @@
+{
+  "@@locale": "fr",
+  "error": "Erreur",
+  "timeoutErrorOccurred": "Erreur de délai d'attente survenue",
+  "errorSomething": "Une erreur s'est produite..."
+}
